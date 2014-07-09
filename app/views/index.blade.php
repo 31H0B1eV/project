@@ -6,8 +6,14 @@ auth | index
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <h1 class="text-center">it works!</h1>
+    @if(Session::has('message'))
+    <div class="alert alert-warning" role="alert">
+        <h1>Warning! <small>{{ Session::get('message') }}</small></h1>
     </div>
+    @endif
+
+    @if(isset($content))
+    {{ $content }}
+    @endif
 </div>
 @stop

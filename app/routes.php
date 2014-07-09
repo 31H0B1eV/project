@@ -11,4 +11,5 @@
 |
 */
 
-Route::controller('/', 'HomeController');
+Route::get('/', 'HomeController@index');
+Route::controller('users', 'UsersController');

@@ -2,10 +2,7 @@
 
 class HomeController extends BaseController {
 
-
-    protected $layout = 'index';
-
-    public function getIndex()
+    public function index()
     {
         return View::make('index');
     }
