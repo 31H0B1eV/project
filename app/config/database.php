@@ -51,7 +51,7 @@ return array(
 			'database' => __DIR__.'/../database/production.sqlite',
 			'prefix'   => '',
 		),
-        $url = parse_url(getenv("CLEARDB_DATABASE_URL")),
+        $url = parse_url(getenv("DATABASE_URL")),
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '$url["host"]',
