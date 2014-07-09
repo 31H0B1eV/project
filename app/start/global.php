@@ -55,6 +55,27 @@ App::error(function(\Illuminate\Session\TokenMismatchException $exception)
 {
     return Redirect::route('login')->with('message','Your session has expired. Please try logging in again.');
 });
+
+App::error(function($exception, $code)
+{
+    if(! Config::get('app.debug'))
+    {
+        switch ($code)
+        {
+//        case 403:
+//            return Response::view('errors.403', array(), 403);
+//
+//        case 404:
+//            return Response::view('errors.404', array(), 404);
+//
+//        case 500:
+//            return Response::view('errors.500', array(), 500);
+
+            default:
+                return Response::view('errors.default', array(), $code);
+        }
+    }
+});
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

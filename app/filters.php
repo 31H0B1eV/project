@@ -13,7 +13,11 @@
 
 App::before(function($request)
 {
-	//
+    // redirect all request on https
+//    if( ! Request::secure())
+//    {
+//        return Redirect::secure(Request::path());
+//    }
 });
 
 

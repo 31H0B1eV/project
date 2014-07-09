@@ -1,0 +1,1 @@
+error page 404
