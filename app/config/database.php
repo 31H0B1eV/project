@@ -1,10 +1,4 @@
 <?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 
 return array(
 
@@ -57,7 +51,7 @@ return array(
 			'database' => __DIR__.'/../database/production.sqlite',
 			'prefix'   => '',
 		),
-
+        $url = parse_url(getenv("CLEARDB_DATABASE_URL")),
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '$url["host"]',
