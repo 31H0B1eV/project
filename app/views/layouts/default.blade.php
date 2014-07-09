@@ -21,7 +21,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Cloud Manager </a>
+            @if(!Auth::check())
+                <a class="navbar-brand" href="/">Cloud Manager </a>
+            @else
+                <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-list"></span></a>
+            @endif
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

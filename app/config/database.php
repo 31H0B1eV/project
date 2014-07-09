@@ -2,11 +2,13 @@
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
-
+if(isset($url["host"]))
+{
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $database = substr($url["path"], 1);
+}
 //$url = parse_url(getenv("DATABASE_URL"));
 //
 //$host = $url["host"];
@@ -68,25 +70,25 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => $host,
-			'database'  => $database,
-			'username'  => $username,
-			'password'  => $password,
+			'host'      => isset($host) ? $host : '',
+			'database'  => isset($database) ? $database : '',
+			'username'  => isset($username) ? $username : '',
+			'password'  => isset($password) ? $password : '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => $host,
-			'database' => $database,
-			'username' => $username,
-			'password' => $password,
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
+//		'pgsql' => array(
+//			'driver'   => 'pgsql',
+//			'host'     => $host,
+//			'database' => $database,
+//			'username' => $username,
+//			'password' => $password,
+//			'charset'  => 'utf8',
+//			'prefix'   => '',
+//			'schema'   => 'public',
+//		),
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
