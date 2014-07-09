@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "barryvdh/laravel-ide-helper": "dev-master"
+        "barryvdh/laravel-ide-helper": "dev-master",
+        "barryvdh/laravel-debugbar": "1.x",
+        "way/generators": "2.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -35,8 +37,6 @@
 	},
 	"minimum-stability": "stable",
     "require-dev": {
-        "fzaninotto/faker": "dev-master",
-        "barryvdh/laravel-debugbar": "1.x",
-        "way/generators": "2.*"
+        "fzaninotto/faker": "dev-master"
     }
 }
